@@ -1,0 +1,8 @@
+category: Gnome
+requires: vala
+external-source: ibus
+sdesc: "IBus X Input Method framework library (Vala bindings)"
+ldesc: "IBus is an Intelligent Input Bus. It is a new input framework 
+for Linux OS. It provides full featured and user friendly input method 
+user interface. It also may help developers to develop input method 
+easily."
