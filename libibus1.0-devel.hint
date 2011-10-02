@@ -1,0 +1,8 @@
+category: X11
+requires: libibus1.0_0 libglib2.0-devel gettext
+external-source: ibus
+sdesc: "IBus X Input Method framework library (development)"
+ldesc: "IBus is an Intelligent Input Bus. It is a new input framework 
+for Linux OS. It provides full featured and user friendly input method 
+user interface. It also may help developers to develop input method 
+easily."

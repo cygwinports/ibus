@@ -1,0 +1,14 @@
+On Newlib platforms, _PTR is a type macro
+
+--- origsrc/ibus-1.4.0/util/IMdkit/FrameMgr.h	2011-08-10 19:49:43.000000000 -0500
++++ src/ibus-1.4.0/util/IMdkit/FrameMgr.h	2011-10-02 13:07:09.201467000 -0500
+@@ -74,6 +74,9 @@ typedef enum
+ 
+ /* Convenient macro */
+ #define _FRAME(a) {a, NULL}
++#ifdef _PTR
++#undef _PTR
++#endif
+ #define _PTR(p)   {PTR_ITEM, (void *)p}
+ /* PADDING's usage of data field
+  * B15-B8  : Shows the number of effective items.

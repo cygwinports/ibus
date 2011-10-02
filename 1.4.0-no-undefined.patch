@@ -1,0 +1,20 @@
+--- origsrc/ibus-1.4.0/client/gtk2/Makefile.am	2011-08-10 19:49:42.000000000 -0500
++++ src/ibus-1.4.0/client/gtk2/Makefile.am	2011-10-02 13:13:40.769689800 -0500
+@@ -52,6 +52,7 @@ im_ibus_la_LIBADD = \
+ im_ibus_la_LDFLAGS = \
+ 	-avoid-version \
+ 	-module \
++	-no-undefined \
+ 	$(NULL)
+ 
+ $(libibus):
+--- origsrc/ibus-1.4.0/client/gtk3/Makefile.am	2011-08-10 19:49:42.000000000 -0500
++++ src/ibus-1.4.0/client/gtk3/Makefile.am	2011-10-02 13:13:58.781977100 -0500
+@@ -52,6 +52,7 @@ im_ibus_la_LIBADD = \
+ im_ibus_la_LDFLAGS = \
+ 	-avoid-version \
+ 	-module \
++	-no-undefined \
+ 	$(NULL)
+ 
+ $(libibus):

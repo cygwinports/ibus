@@ -1,0 +1,26 @@
+inherit python gnome2
+
+DESCRIPTION="IBus X Input Module framework"
+HOMEPAGE="http://code.google.com/p/ibus/"
+SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
+
+PATCH_URI="1.4.0-cygwin-compile.patch
+	   1.4.0-no-undefined.patch
+	   1.4.0-python-ctypes.patch
+	   1.4.0-vpath.patch"
+
+DISTCLEANFILES="src/*.gir"
+
+PKG_NAMES="ibus libibus1.0_0 libibus1.0-devel girepository-IBus1.0 python-ibus
+           gtk2.0-immodules-ibus gtk3-immodules-ibus"
+ibus_CONTENTS="--exclude=gir-1.0 --exclude=gtk-doc --exclude=vala
+               etc/ usr/bin/ibus* usr/lib/ibus/ usr/share/"
+libibus1_0_0_CONTENTS="usr/bin/cygibus-1.0-0.dll"
+libibus1_0_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/
+                           usr/share/gtk-doc/ usr/share/vala/"
+girepository_IBus1_0_CONTENTS="usr/*/gir*/IBus-1.0.*"
+python_ibus_CONTENTS=${PYTHON_SITELIB#/}
+gtk2_0_immodules_ibus_CONTENTS="usr/lib/gtk-2.0/"
+gtk3_immodules_ibus_CONTENTS="usr/lib/gtk-3.0/"
+
+CYGCONF_ARGS="--libexecdir=/usr/lib/ibus --enable-dconf --disable-gconf"

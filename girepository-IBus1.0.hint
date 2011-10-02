@@ -1,0 +1,8 @@
+category: Gnome
+requires: libibus1.0_0 girepository-GLib2.0
+external-source: ibus
+sdesc: "IBus X Input Method framework library (GObject Introspection)"
+ldesc: "IBus is an Intelligent Input Bus. It is a new input framework 
+for Linux OS. It provides full featured and user friendly input method 
+user interface. It also may help developers to develop input method 
+easily."

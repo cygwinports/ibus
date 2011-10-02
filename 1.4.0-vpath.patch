@@ -1,0 +1,11 @@
+--- origsrc/ibus-1.4.0/src/Makefile.am	2011-09-17 11:14:51.000000000 -0500
++++ src/ibus-1.4.0/src/Makefile.am	2011-10-02 12:59:24.402445000 -0500
+@@ -174,7 +174,7 @@ IBus_1_0_gir_SCANNERFLAGS = --pkg=glib-2
+ IBus_1_0_gir_INCLUDES = GLib-2.0 GObject-2.0 Gio-2.0
+ IBus_1_0_gir_LIBS = $(libibus)
+ IBus_1_0_gir_FILES = $(addprefix $(srcdir)/,$(introspection_files))
+-IBus_1_0_gir_CFLAGS = -DIBUS_COMPILATION
++IBus_1_0_gir_CFLAGS = -DIBUS_COMPILATION -I$(srcdir)
+ INTROSPECTION_GIRS += IBus-1.0.gir
+ 
+ girdir = $(datadir)/gir-1.0
