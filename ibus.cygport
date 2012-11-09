@@ -1,6 +1,13 @@
 inherit python gnome2
 
-DESCRIPTION="IBus X Input Module framework"
+NAME="ibus"
+VERSION=1.4.2
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="IBus X Input Module framework"
+DESCRIPTION="IBus is an Intelligent Input Bus. It is a new input framework
+for X11 systems. It provides full featured and user friendly input method user
+interface. It also may help developers to develop input method easily."
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${P}.tar.gz"
 
@@ -15,12 +22,22 @@ PKG_NAMES="ibus libibus1.0_0 libibus1.0-devel girepository-IBus1.0 python-ibus
            vala-ibus1.0 gtk2.0-immodules-ibus gtk3-immodules-ibus"
 ibus_CONTENTS="--exclude=gir-1.0 --exclude=gtk-doc --exclude=vala
                etc/ usr/bin/ibus* usr/lib/ibus/ usr/share/"
+libibus1_0_0_SUMMARY="${SUMMARY} library (runtime)"
 libibus1_0_0_CONTENTS="usr/bin/cygibus-1.0-0.dll"
+libibus1_0_devel_SUMMARY="${SUMMARY} library (development)"
 libibus1_0_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+girepository_IBus1_0_SUMMARY="${SUMMARY} library (GObject Introspection)"
 girepository_IBus1_0_CONTENTS="usr/*/gir*/IBus-1.0.*"
+python_ibus_SUMMARY="${SUMMARY} (Python library)"
+python_ibus_REQUIRES="libibus1.0-devel"		# ctypes.util.find_library()
 python_ibus_CONTENTS=${PYTHON_SITELIB#/}
+vala_ibus1_0_SUMMARY="${SUMMARY} library (Vala bindings)"
 vala_ibus1_0_CONTENTS="usr/share/vala/"
+gtk2_0_immodules_ibus_SUMMARY="GTK+ 2.x IBus X Input Method module"
 gtk2_0_immodules_ibus_CONTENTS="usr/lib/gtk-2.0/"
+gtk3_immodules_ibus_SUMMARY="GTK+ 3.x IBus X Input Method module"
 gtk3_immodules_ibus_CONTENTS="usr/lib/gtk-3.0/"
 
 CYGCONF_ARGS="--libexecdir=/usr/lib/ibus --enable-dconf --disable-gconf"
+
+KEEP_LA_FILES="none"

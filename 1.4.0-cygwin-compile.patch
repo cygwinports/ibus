@@ -12,3 +12,51 @@ On Newlib platforms, _PTR is a type macro
  #define _PTR(p)   {PTR_ITEM, (void *)p}
  /* PADDING's usage of data field
   * B15-B8  : Shows the number of effective items.
+--- origsrc/ibus-1.4.2/util/IMdkit/i18nMethod.c	2012-03-06 09:34:36.000000000 -0600
++++ src/ibus-1.4.2/util/IMdkit/i18nMethod.c	2012-11-09 00:12:10.784340600 -0600
+@@ -36,10 +36,10 @@ IN CONNECTION WITH THE USE OR PERFORMANC
+ #endif
+ #include <X11/Xproto.h>
+ #undef NEED_EVENTS
+-#include "FrameMgr.h"
+-#include "IMdkit.h"
+ #include "Xi18n.h"
+ #include "XimFunc.h"
++#include "FrameMgr.h"
++#include "IMdkit.h"
+ 
+ extern Xi18nClient *_Xi18nFindClient (Xi18n, CARD16);
+ 
+--- origsrc/ibus-1.4.2/util/IMdkit/i18nPtHdr.c	2012-03-06 09:34:36.000000000 -0600
++++ src/ibus-1.4.2/util/IMdkit/i18nPtHdr.c	2012-11-09 00:12:24.098375800 -0600
+@@ -37,10 +37,10 @@ IN CONNECTION WITH THE USE OR PERFORMANC
+ #endif
+ #include <X11/Xproto.h>
+ #undef NEED_EVENTS
+-#include "FrameMgr.h"
+-#include "IMdkit.h"
+ #include "Xi18n.h"
+ #include "XimFunc.h"
++#include "FrameMgr.h"
++#include "IMdkit.h"
+ 
+ #ifdef XIM_DEBUG
+ #include <stdio.h>
+--- origsrc/ibus-1.4.2/util/IMdkit/i18nX.c	2012-03-06 09:34:36.000000000 -0600
++++ src/ibus-1.4.2/util/IMdkit/i18nX.c	2012-11-09 00:14:34.339558200 -0600
+@@ -31,12 +31,13 @@ IN CONNECTION WITH THE USE OR PERFORMANC
+ 
+ #include <limits.h>
+ #include <X11/Xlib.h>
++#include <X11/Xproto.h>
+ #include <X11/Xatom.h>
+-#include "FrameMgr.h"
+-#include "IMdkit.h"
+ #include "Xi18n.h"
+ #include "Xi18nX.h"
+ #include "XimFunc.h"
++#include "FrameMgr.h"
++#include "IMdkit.h"
+ 
+ extern Xi18nClient *_Xi18nFindClient(Xi18n, CARD16);
+ extern Xi18nClient *_Xi18nNewClient(Xi18n);
