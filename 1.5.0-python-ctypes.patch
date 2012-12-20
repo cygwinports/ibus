@@ -1,0 +1,9 @@
+--- origsrc/ibus-1.5.0/ibus/_config.py.in	2012-06-01 10:54:31.000000000 -0500
++++ src/ibus-1.5.0/ibus/_config.py.in	2012-12-19 17:20:59.992554600 -0600
+@@ -56,5 +56,5 @@ def get_ICON_KEYBOARD():
+         return fallback_icon
+     return icon
+ 
+-LIBIBUS_SONAME='libibus-@IBUS_API_VERSION@.so.@LT_CURRENT_MINUS_AGE@'
++LIBIBUS_SONAME='cygibus-@IBUS_API_VERSION@-@LT_CURRENT_MINUS_AGE@.dll'
+ ISOCODES_PREFIX='@ISOCODES_PREFIX@'
