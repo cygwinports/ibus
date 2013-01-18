@@ -1,8 +1,8 @@
 inherit python gnome2
 
 NAME="ibus"
-VERSION=1.5.0
-RELEASE=2
+VERSION=1.5.1
+RELEASE=1
 CATEGORY="X11"
 SUMMARY="IBus X Input Module framework"
 DESCRIPTION="IBus is an Intelligent Input Bus. It is a new input framework
