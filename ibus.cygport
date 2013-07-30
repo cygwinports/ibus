@@ -1,9 +1,9 @@
 inherit python gnome2
 
 NAME="ibus"
-VERSION=1.5.1
+VERSION=1.5.3
 RELEASE=1
-CATEGORY="X11"
+CATEGORY="Libs"
 SUMMARY="IBus X Input Module framework"
 DESCRIPTION="IBus is an Intelligent Input Bus. It is a new input framework
 for X11 systems. It provides full featured and user friendly input method user
@@ -19,10 +19,12 @@ PATCH_URI="1.4.0-cygwin-compile.patch
 DISTCLEANFILES="src/*.gir"
 
 PKG_NAMES="ibus libibus1.0_5 libibus1.0-devel girepository-IBus1.0 python-ibus
-           vala-ibus1.0 gtk2.0-immodules-ibus gtk3-immodules-ibus"
+           vala-ibus1.0"
+ibus_CATEGORY="X11"
 ibus_REQUIRES="girepository-Gtk3.0 girepository-IBus1.0"
+ibus_OBSOLETES="gtk2.0-immodules-ibus gtk3-immodules-ibus"
 ibus_CONTENTS="--exclude=gir-1.0 --exclude=gtk-doc --exclude=vala
-               etc/ usr/bin/ibus* usr/lib/gtk*/ usr/lib/ibus/ usr/share/"
+               etc/ usr/bin/ibus* usr/lib/gtk*/ usr/libexec/ usr/share/"
 libibus1_0_5_SUMMARY="${SUMMARY} library (runtime)"
 libibus1_0_5_CONTENTS="usr/bin/cygibus-1.0-5.dll"
 libibus1_0_devel_SUMMARY="${SUMMARY} library (development)"
@@ -34,13 +36,8 @@ python_ibus_REQUIRES="libibus1.0_5"		# ctypes.CDLL()
 python_ibus_CONTENTS=${PYTHON_SITELIB#/}
 vala_ibus1_0_SUMMARY="${SUMMARY} library (Vala bindings)"
 vala_ibus1_0_CONTENTS="usr/share/vala/"
-gtk2_0_immodules_ibus_CATEGORY="_obsolete"
-gtk2_0_immodules_ibus_REQUIRES="ibus"
-gtk3_immodules_ibus_CATEGORY="_obsolete"
-gtk3_immodules_ibus_REQUIRES="ibus"
 
 CYGCONF_ARGS="
-	--libexecdir=/usr/lib/ibus
 	--enable-dconf
 	--disable-gconf
 	--enable-python-library
