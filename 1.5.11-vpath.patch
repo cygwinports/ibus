@@ -1,0 +1,23 @@
+--- origsrc/ibus-1.5.11/engine/Makefile.am	2015-07-16 00:12:52.000000000 -0500
++++ src/ibus-1.5.11/engine/Makefile.am	2015-07-23 13:02:06.800079600 -0500
+@@ -50,7 +50,8 @@ AM_LDADD = \
+ 	$(NULL)
+ 
+ AM_VALAFLAGS = \
+-	--vapidir=$(top_builddir)/bindings/vala \
++	--vapidir=$(abs_top_builddir)/bindings/vala \
++	--pkg=gio-2.0 \
+ 	--pkg=ibus-1.0 \
+ 	--target-glib="$(VALA_TARGET_GLIB_VERSION)" \
+ 	$(NULL)
+--- origsrc/ibus-1.5.11/ui/gtk3/Makefile.am	2015-07-16 00:12:52.000000000 -0500
++++ src/ibus-1.5.11/ui/gtk3/Makefile.am	2015-07-23 13:02:54.130589900 -0500
+@@ -68,7 +68,7 @@ AM_LDADD = \
+ 	$(NULL)
+ 
+ AM_VALAFLAGS = \
+-	--vapidir=$(top_builddir)/bindings/vala \
++	--vapidir=$(abs_top_builddir)/bindings/vala \
+ 	--vapidir=$(top_srcdir)/bindings/vala \
+ 	--pkg=posix \
+ 	--pkg=gtk+-3.0 \
