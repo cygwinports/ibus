@@ -1,7 +1,7 @@
 inherit python python3 gnome2
 
 NAME="ibus"
-VERSION=1.5.11
+VERSION=1.5.13
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="IBus X Input Module framework"
