@@ -1,0 +1,11 @@
+--- origsrc/ibus-1.5.14/src/Makefile.am	2016-08-04 22:36:16.000000000 -0500
++++ src/ibus-1.5.14/src/Makefile.am	2016-11-08 15:58:08.476433700 -0600
+@@ -239,7 +239,7 @@ dict_DATA = emoji.dict
+ 
+ noinst_PROGRAMS = emoji-parser
+ 
+-emoji.dict: emoji-parser
++emoji.dict: emoji-parser$(EXEEXT)
+ 	$(builddir)/emoji-parser --xml $(srcdir)/../data/annotations/en.xml \
+ 	--json $(EMOJI_JSON_FILE) --out $@
+ 

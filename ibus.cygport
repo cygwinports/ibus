@@ -1,7 +1,7 @@
 inherit python python3 gnome2
 
 NAME="ibus"
-VERSION=1.5.13
+VERSION=1.5.14
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="IBus X Input Module framework"
@@ -11,12 +11,16 @@ interface. It also may help developers to develop input method easily."
 HOMEPAGE="https://github.com/ibus/ibus/wiki"
 SRC_URI="
 	https://github.com/ibus/ibus/archive/${VERSION}/ibus-${VERSION}.tar.gz
+	https://raw.githubusercontent.com/iamcal/emoji-data/master/emoji.json
 	xinput-ibus.conf
 "
-PATCH_URI="1.4.0-cygwin-compile.patch
-	   1.4.0-no-undefined.patch
-	   1.5.0-python-ctypes.patch
-	   1.5.11-vpath.patch
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/rpms/ibus.git/plain/ibus-HEAD.patch
+	1.4.0-cygwin-compile.patch
+	1.4.0-no-undefined.patch
+	1.5.0-python-ctypes.patch
+	1.5.11-vpath.patch
+	1.5.14-exeext.patch
 "
 
 PKG_NAMES="ibus libibus1.0_5 libibus1.0-devel libibus1.0-doc
@@ -41,9 +45,11 @@ ibus_CONTENTS="
 	usr/share/GConf/gsettings/ibus.convert
 	usr/share/applications/ibus-setup.desktop
 	usr/share/bash-completion/completions/ibus.bash
+	usr/share/dbus-1/services/org.freedesktop.IBus.service
 	usr/share/doc/ibus/
 	usr/share/glib-2.0/schemas/org.freedesktop.ibus.gschema.xml
 	usr/share/ibus/component/
+	usr/share/ibus/dicts/
 	usr/share/ibus/keymaps/
 	usr/share/ibus/setup/
 	usr/share/icons/hicolor/*/apps/ibus*
@@ -77,6 +83,7 @@ CYGCONF_ARGS="
 	--disable-gconf
 	--enable-python-library
 	--with-python=python3
+	--with-emoji-json-file=\$(top_srcdir)/emoji.json
 "
 
 src_install() {
