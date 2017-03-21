@@ -34,3 +34,12 @@
  	--pkg=ibus-1.0 \
  	--pkg=posix \
  	--pkg=config \
+@@ -114,7 +114,7 @@ AM_LDADD += \
+ 	$(NULL)
+ AM_VALAFLAGS += \
+ 	--define=EMOJI_DICT \
+-	--vapidir=$(top_builddir)/ui/gtk3 \
++	--vapidir=$(abs_top_builddir)/ui/gtk3 \
+ 	--vapidir=$(top_srcdir)/ui/gtk3 \
+ 	--pkg=ibus-emoji-dialog-1.0 \
+ 	--pkg=gtk+-3.0 \

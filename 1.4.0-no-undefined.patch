@@ -18,3 +18,15 @@
  	$(NULL)
  
  $(libibus):
+--- origsrc/ibus-1.5.15/ui/gtk3/Makefile.am	2017-03-13 03:07:58.221338900 -0500
++++ src/ibus-1.5.15/ui/gtk3/Makefile.am	2017-03-13 03:29:38.908252500 -0500
+@@ -171,6 +171,9 @@ libibus_emoji_dialog_1_0_la_LDFLAGS =
+     -export-symbols-regex "ibus_.*"     \
+     -version-info @LT_VERSION_INFO@     \
+     $(NULL)
++libibus_emoji_dialog_1_0_la_LIBADD =    \
++    $(libibus)                          \
++    $(GTK3_LIBS)
+ libibus_emoji_dialog_1_0_la_SOURCES =   \
+     emojier.c                           \
+     iconwidget.c                        \
